@@ -1,0 +1,10 @@
+{
+  "name": "pino",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "<romain.testard@bluenove.com>",
+  "license": "MIT",
+  "dependencies": {
+    "pino": "^6.7.0"
+  }
+}
