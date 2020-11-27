@@ -22,4 +22,4 @@ const getLogger = () => {
 
 const logger = getLogger();
 
-logger.error('Error message')
+console.log(Object.getOwnPropertyNames(DefaultLogger.prototype));
