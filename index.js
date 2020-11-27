@@ -1,7 +1,7 @@
-const pino = require("pino");
+const pino = require('pino');
 
 class DefaultLogger {
-  levels = ["trace", "debug", "info", "warn", "error", "fatal"];
+  levels = ['trace', 'debug', 'info', 'warn', 'error', 'fatal'];
   constructor(logger) {
     this.logger = logger;
     this.init();
@@ -9,13 +9,10 @@ class DefaultLogger {
 
   init() {
     this.levels.forEach((level) => {
-        console.log(level)
-      Object.assign(DefaultLogger.prototype, level);
+      DefaultLogger.prototype[level] = (attributes) => {
+        return this.logger[level](attributes);
+      };
     });
-  }
-
-  logHandler(level) {
-    this.logger[level];
   }
 }
 
@@ -25,6 +22,4 @@ const getLogger = () => {
 
 const logger = getLogger();
 
-console.log(Object.getOwnPropertyNames(DefaultLogger.prototype));
-
-/* logger.info("trililili"); */
+logger.error('Error message')
