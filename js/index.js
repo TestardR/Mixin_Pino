@@ -2,6 +2,7 @@ const pino = require('pino');
 
 class DefaultLogger {
   levels = ['trace', 'debug', 'info', 'warn', 'error', 'fatal'];
+
   constructor(logger) {
     this.logger = logger;
     this.init();
